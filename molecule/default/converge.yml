@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include drum7.testrole"
+      include_role:
+        name: "drum7.testrole"
