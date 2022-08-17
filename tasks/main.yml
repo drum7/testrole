@@ -1,2 +1,10 @@
 ---
-# tasks file for testrole
+- name: Be patient
+  ansible.builtin.debug:
+    msg: "Apache Webserver will be installed now!"
+
+- name: Installing Webserver
+  ansible.builtin.yum:
+    name: httpd
+    state: present
+  when: ansible_os_family == 'RedHat'
