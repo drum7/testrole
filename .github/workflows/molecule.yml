@@ -23,8 +23,8 @@ jobs:
       - name: Install dependencies.
         run: pip3 install yamllint ansible-lint ansible "molecule[lint,docker]"
 
-      - name: Install Galaxy dependencies.
-        run: ansible-galaxy collection install community.docker
-
       - name: Run molecule
-        run: "cd /home/runner/work/testrole/testrole && molecule test"
+        run: molecule test
+        env:
+          PY_COLORS: '1'
+          ANSIBLE_FORCE_COLOR: '1'
